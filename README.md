@@ -5,9 +5,9 @@
 **Topology:** Fixed-Frequency ($400\text{ kHz}$) Peak-Current-Mode Synchronous Buck Converter  
 **Board Dimensions:** $45\text{ mm} \times 30\text{ mm}$, 2-Layer FR-4 ($1.6\text{ mm}$ thickness, $1\text{ oz}$ copper)
 
-![[12V_5V_Buck_Converter_3D_PCB.png]]
+![3D PCB Render](12V_5V_Buck_Converter_3D_PCB.png)
 
-![[12V_5V_Buck_Converter_2D_PCB.png]]
+![2D PCB Layout](12V_5V_Buck_Converter_2D_PCB.png)
 
 ---
 
