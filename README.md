@@ -101,7 +101,7 @@ The full spreadsheet is available in [BOM.csv](BOM.csv).
 | Ref | Qty | Value | Package | Manufacturer | MPN | Description |
 | :--- | :-: | :--- | :--- | :--- | :--- | :--- |
 | `U1` | 1 | `TPS54302` | `SOT-23-6` | Texas Instruments | `TPS54302DDCR` | 4.5V–28V In, 3A Sync Buck Converter |
-| `L1` | 1 | `10uH` | `7.3x6.6mm` | Bourns | `SRP7028A-100M` | Shielded Power Inductor, $4.5\text{ A}_{\text{RMS}}, 8\text{ A}_{\text{sat}}$ |
+| `L1` | 1 | `10uH` | `7.3x6.6mm` | Bourns | `SRP7028A-100M` | Shielded Power Inductor, $4.5\text{ A}\_{\text{RMS}}$, $8\text{ A}\_{\text{sat}}$ |
 | `C1` | 1 | `10uF` | `1206` | Samsung | `CL31B106KBHNNNE` | MLCC $10\,\mu\text{F}$, $50\text{ V}$, X7R, $\pm 10\%$ |
 | `C2, C3` | 2 | `0.1uF` | `0805` | Yageo | `CC0805KRX7R9BB104` | MLCC $0.1\,\mu\text{F}$, $50\text{ V}$, X7R, $\pm 10\%$ |
 | `C4, C5` | 2 | `22uF` | `1206` | Murata | `GRM31CR61E226KE15L` | MLCC $22\,\mu\text{F}$, $25\text{ V}$, X5R, $\pm 10\%$ |
