@@ -1,6 +1,6 @@
 # 12V-to-5V 3A Synchronous DC-DC Buck Converter (TPS54302)
 
-**Author:** Torin Hamilton
+**Author:** Torin Hamilton  
 **CAD Tool:** KiCad 10.0  
 **Topology:** Fixed-Frequency ($400\text{ kHz}$) Peak-Current-Mode Synchronous Buck Converter  
 **Board Dimensions:** $45\text{ mm} \times 30\text{ mm}$, 2-Layer FR-4 ($1.6\text{ mm}$ thickness, $1\text{ oz}$ copper)
