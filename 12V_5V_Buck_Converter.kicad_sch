@@ -6,10 +6,10 @@
 	(paper "A4")
 	(title_block
 		(title "12V-to-5V 3A Synchronous Buck Converter (TPS54302)")
-		(date "2026-11-11")
-		(rev "1.0")
+		(date "2026-11-14")
+		(rev "1.1")
 		(company "Torin Hamilton")
-		(comment 1 "Input: 8V-24V DC (12V Nominal)")
+		(comment 1 "Input: 8V-28V DC (12V Nominal)")
 		(comment 2 "Output: 5.0V @ 3A Max")
 		(comment 3 "f_sw = 400 kHz")
 		(comment 4 "Peak efficiency ~95%")
