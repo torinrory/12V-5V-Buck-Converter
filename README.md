@@ -25,7 +25,7 @@
 | Rev | Status | Summary |
 | :-: | :--- | :--- |
 | **1.0** | PCBs and components ordered; awaiting assembly and bring-up | First PCB design. Component values follow TI's 5 V, 3 A reference design (Datasheet Figure 7-1). Post-layout review findings are documented in [Section 6](#6-known-issues--rev-11-changes). |
-| **1.1** | Layout complete; awaiting fabrication | Addresses all eight Rev 1.0 issues in [Section 6](#6-known-issues--rev-11-changes): shortened input hot loop with dedicated `GND` vias, solid SMD ground connections and 32 `GND` stitching vias, input damping capacitor `C7`, compact feedback network, extended `L1` pad, reduced `SW` copper, and Keystone-compatible test points. |
+| **1.1** | PCBs ordered from OSH Park and components ordered from Mouser (Nov 2026); awaiting assembly and bring-up | Addresses all eight Rev 1.0 issues in [Section 6](#6-known-issues--rev-11-changes): shortened input hot loop with dedicated `GND` vias, solid SMD ground connections and 32 `GND` stitching vias, input damping capacitor `C7`, compact feedback network, extended `L1` pad, reduced `SW` copper, and Keystone-compatible test points. |
 
 ---
 
@@ -163,7 +163,7 @@ The full Rev 1.1 spreadsheet is available in [BOM.xlsx](BOM.xlsx) (the Rev 1.0 o
 5. **Through-Hole Parts (`J1`, `J2`, `C7`, `TP1`, `TP3`, `TP4`):** These pads tie into two layers of `GND` pour — raise the iron temperature and allow extra dwell time on the `GND` pins. `C7` is polarized: its `+` lead goes to the square pad (`Vin`).
 
 ### Bench Equipment
-Bring-up and characterization use only a **current-limited bench DC power supply** and a **digital multimeter (DMM)**. Load is provided by power resistors — for example, six $10\,\Omega$, $10\text{ W}$ resistors switched in parallel ($0.5\text{ A}$ steps up to $3\text{ A}$, $2.5\text{ W}$ each at $5\text{ V}$).
+Bring-up and characterization use only a **current-limited bench DC power supply** and a **digital multimeter (DMM)**. Load is provided by a resistor load bank: six TE Connectivity `SQPW1010RJ` ($10\,\Omega$, $10\text{ W}$ axial wirewound) resistors on a TE/Buchanan `1546671-8` 8-position dual-row barrier strip. Alternate positions are tied together with 18 AWG jumpers to form `Vout` and `GND` buses, and each resistor bridges two adjacent positions. Each connected resistor adds $0.5\text{ A}$ at $5\text{ V}$ ($2.5\text{ W}$ per resistor); all six give $1.67\,\Omega$ = $3\text{ A}$. Connect it to `J2` with 18–20 AWG leads, and keep the hot resistor bodies clear of the plastic strip.
 
 > **⚠ Rev 1.0 input-voltage limit:** The Rev 1.0 build uses a $25\text{ V}$-rated substitute for `C1` (the specified $50\text{ V}$ part was out of stock; Rev 1.1 specifies a $50\text{ V}$ part). Limit bench testing to **$\leq 15\text{ V}$ input** until `C1` is replaced with a $50\text{ V}$ $10\,\mu\text{F}$ capacitor. The $24\text{ V}$ and $28\text{ V}$ rows in the Section 5.5 results table apply only after that replacement.
 
