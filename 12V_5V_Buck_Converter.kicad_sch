@@ -6,13 +6,13 @@
 	(paper "A4")
 	(title_block
 		(title "12V-to-5V 3A Synchronous Buck Converter (TPS54302)")
-		(date "2026-11-14")
+		(date "2026-11-18")
 		(rev "1.1")
 		(company "Torin Hamilton")
 		(comment 1 "Input: 8V-28V DC (12V Nominal)")
 		(comment 2 "Output: 5.0V @ 3A Max")
 		(comment 3 "f_sw = 400 kHz")
-		(comment 4 "Peak efficiency ~95%")
+		(comment 4 "Target efficiency ~93–95%")
 	)
 	(lib_symbols
 		(symbol "Connector:Screw_Terminal_01x02"
@@ -460,6 +460,183 @@
 				)
 			)
 			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794) (xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 2.794)
@@ -1468,9 +1645,9 @@
 		)
 		(uuid "347c9e96-90ef-48c5-9e5d-6deddd41e5ec")
 	)
-	(text "2x 22uF 25V X5R/X7R (1206)\n(<30mVpp ripple, <5% sag on 1.5A step)"
+	(text "2x 22uF 25V X5R/X7R (1206)\n(Design target: <30 mVpp ripple, <5% sag on 1.5 A step)"
 		(exclude_from_sim no)
-		(at 193.802 83.058 0)
+		(at 195.326 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1487,6 +1664,16 @@
 			)
 		)
 		(uuid "e6d32a43-5752-4608-9db1-320200995916")
+	)
+	(text "C7: input damping for hot-plug (Rev 1.1)"
+		(exclude_from_sim no)
+		(at 76.708 77.978 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e7385c2a-b7ba-4f02-b972-004e1bd31606")
 	)
 	(junction
 		(at 87.63 101.6)
@@ -1511,6 +1698,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "21f77fdb-0c73-4f5b-8fb0-b7d77cdc5e76")
+	)
+	(junction
+		(at 69.85 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37697fd0-c26a-45f2-8c09-c24c741f7319")
 	)
 	(junction
 		(at 191.77 88.9)
@@ -1583,6 +1776,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d3c565ec-1b82-46ec-98d1-51129836419b")
+	)
+	(junction
+		(at 69.85 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d525ab49-f4e0-4b82-a68a-14e863312abe")
 	)
 	(junction
 		(at 118.11 86.36)
@@ -1678,6 +1877,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 86.36) (xy 69.85 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e64cd12-0b5e-460f-8942-02b444e8d0d6")
+	)
+	(wire
+		(pts
 			(xy 199.39 99.06) (xy 209.55 99.06)
 		)
 		(stroke
@@ -1705,6 +1914,16 @@
 			(type default)
 		)
 		(uuid "2212a603-70d9-4279-a51e-746b035cbbc4")
+	)
+	(wire
+		(pts
+			(xy 64.77 95.25) (xy 64.77 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25c68c34-99cd-4348-88ab-889c21a059c0")
 	)
 	(wire
 		(pts
@@ -1748,16 +1967,6 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 86.36) (xy 78.74 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35bf4aaa-7309-4d6a-83c8-4e3327ab2999")
-	)
-	(wire
-		(pts
 			(xy 248.92 116.84) (xy 223.52 116.84)
 		)
 		(stroke
@@ -1775,16 +1984,6 @@
 			(type default)
 		)
 		(uuid "3e71c68e-a989-4c47-9db9-4c7c8cb6e4a4")
-	)
-	(wire
-		(pts
-			(xy 78.74 86.36) (xy 100.33 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42d50a2b-5881-436e-9be7-e8eebf873c70")
 	)
 	(wire
 		(pts
@@ -1815,6 +2014,16 @@
 			(type default)
 		)
 		(uuid "4f7e7e30-67d1-4105-b9e4-5654a3cf36d2")
+	)
+	(wire
+		(pts
+			(xy 69.85 86.36) (xy 100.33 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52f58a80-3718-4fe5-ae69-1094e9fa77f5")
 	)
 	(wire
 		(pts
@@ -1878,6 +2087,26 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 86.36) (xy 69.85 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64206f39-8982-44af-9752-1d1231623ceb")
+	)
+	(wire
+		(pts
+			(xy 69.85 101.6) (xy 87.63 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6adcce4b-77de-4d7a-b896-f6c5227951e5")
+	)
+	(wire
+		(pts
 			(xy 100.33 86.36) (xy 111.76 86.36)
 		)
 		(stroke
@@ -1908,13 +2137,13 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 101.6) (xy 87.63 101.6)
+			(xy 64.77 101.6) (xy 69.85 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "86b09d99-4e83-430a-af70-56217b058b97")
+		(uuid "8b159a5b-cfb1-4742-9a14-d51c810ebd6e")
 	)
 	(wire
 		(pts
@@ -1958,16 +2187,6 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 95.25) (xy 78.74 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97f2710b-5405-4164-bf8c-fa9a40169992")
-	)
-	(wire
-		(pts
 			(xy 111.76 86.36) (xy 118.11 86.36)
 		)
 		(stroke
@@ -1998,6 +2217,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 92.71) (xy 64.77 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3571b8c-ad4e-44eb-a50b-759c207e1f2b")
+	)
+	(wire
+		(pts
 			(xy 87.63 101.6) (xy 87.63 116.84)
 		)
 		(stroke
@@ -2015,6 +2244,16 @@
 			(type default)
 		)
 		(uuid "bb478caa-334f-44b0-b7fc-708dea140d72")
+	)
+	(wire
+		(pts
+			(xy 69.85 101.6) (xy 69.85 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb62c647-f141-4753-8b72-a2c4712ea6a8")
 	)
 	(wire
 		(pts
@@ -2048,6 +2287,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 92.71) (xy 64.77 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d874a33e-8935-4f8a-aff8-56d8e244127e")
+	)
+	(wire
+		(pts
 			(xy 87.63 86.36) (xy 87.63 90.17)
 		)
 		(stroke
@@ -2065,6 +2314,16 @@
 			(type default)
 		)
 		(uuid "daca6522-73be-4c0b-ba3d-6f7c006d9d9e")
+	)
+	(wire
+		(pts
+			(xy 63.5 95.25) (xy 64.77 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddde6bce-d207-4b49-b10d-0506b4eefa1e")
 	)
 	(wire
 		(pts
@@ -2210,7 +2469,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 218.44 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -2257,7 +2516,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 73.66 95.25 180)
+		(at 58.42 95.25 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2268,7 +2527,7 @@
 		(fields_autoplaced yes)
 		(uuid "0f7af349-c478-4b38-b3e6-0981f8dc038c")
 		(property "Reference" "J1"
-			(at 73.66 86.36 0)
+			(at 58.42 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2277,8 +2536,8 @@
 				)
 			)
 		)
-		(property "Value" "Vin_12V"
-			(at 73.66 88.9 0)
+		(property "Value" "Vin_8-28V"
+			(at 58.42 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2288,7 +2547,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
-			(at 73.66 95.25 0)
+			(at 58.42 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2299,7 +2558,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 95.25 0)
+			(at 58.42 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2310,7 +2569,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 73.66 95.25 0)
+			(at 58.42 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2686,7 +2945,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 92.71 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -3484,7 +3743,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 156.21 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -3889,7 +4148,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Bourns_SRP7028A_7.3x6.6mm"
+		(property "Footprint" "Library:L_Bourns_SRP7028A_7.3x6.6mm_Extended"
 			(at 168.91 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -4217,7 +4476,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 228.6 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -4257,6 +4516,88 @@
 			(project "12V_5V_Buck_Converter"
 				(path "/0d25458a-e2be-4817-aa8b-bab0bbe2ba11"
 					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 69.85 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6f04f62-3f4d-4ffb-b413-842630ece03c")
+		(property "Reference" "C7"
+			(at 73.66 91.8209 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47 uF 50V"
+			(at 73.66 94.3609 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
+			(at 70.8152 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor"
+			(at 69.85 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "3d53ed02-c4cd-460b-b90b-685d205d2d12")
+		)
+		(pin "1"
+			(uuid "09c6150e-1891-44c0-917b-f2fa4ebff37e")
+		)
+		(instances
+			(project "12V_5V_Buck_Converter"
+				(path "/0d25458a-e2be-4817-aa8b-bab0bbe2ba11"
+					(reference "C7")
 					(unit 1)
 				)
 			)
